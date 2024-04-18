@@ -1,9 +1,20 @@
 import ComposableArchitecture
+import SpaceSDK
 import SwiftUI
+import UIToolkit
 
 // MARK: - ViewState
 
 extension RocketListFeature.RocketListCellFeature.State {
+  var title: String {
+    rocket.rocketName
+  }
+
+  var description: String {
+    Localizable.Rocket.List.Cell.description(
+      rocket.firstFlight.formatted(.dateTime.day().month(.twoDigits).year())
+    )
+  }
 }
 
 // MARK: - View
@@ -19,7 +30,19 @@ extension RocketListFeature.RocketListCellFeature {
     // MARK: - Body
 
     public var body: some View {
-      Image.rocket
+      HStack(spacing: .xSmall) {
+        Image.rocket
+
+        VStack(alignment: .leading, spacing: .xxSmall) {
+          Text(store.title)
+            .font(.title3)
+            .foregroundColor(.Text.primary)
+
+          Text(store.description)
+            .font(.subheadline)
+            .foregroundColor(.Text.secondary)
+        }
+      }
     }
   }
 }
@@ -30,7 +53,7 @@ extension RocketListFeature.RocketListCellFeature {
 #Preview {
   RocketListFeature.RocketListCellFeature.MainView(
     store: .init(
-      initialState: .init(),
+      initialState: .init(rocket: .mock),
       reducer: RocketListFeature.RocketListCellFeature.init
     )
   )

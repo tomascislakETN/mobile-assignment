@@ -10,11 +10,13 @@ let package = Package(
     // Products define the executables and libraries a package produces, making them visible to other packages.
     .library(
       name: "RocketList",
-      targets: ["RocketList"]),
+      targets: ["RocketList"]
+    )
   ],
   dependencies: [
     .package(path: "../Infrastructure"),
-    .package(url: "https://github.com/pointfreeco/swift-composable-architecture", .upToNextMajor(from: "1.0.0")),
+    .package(path: "../Domain"),
+    .package(url: "https://github.com/pointfreeco/swift-composable-architecture", .upToNextMajor(from: "1.0.0"))
   ],
   targets: [
     // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -23,11 +25,13 @@ let package = Package(
       name: "RocketList",
       dependencies: [
         .product(name: "UIToolkit", package: "Infrastructure"),
+        .product(name: "SpaceSDK", package: "Domain"),
         .product(name: "ComposableArchitecture", package: "swift-composable-architecture")
       ]
     ),
     .testTarget(
       name: "RocketListTests",
-      dependencies: ["RocketList"]),
+      dependencies: ["RocketList"]
+    )
   ]
 )

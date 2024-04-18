@@ -1,1 +1,2 @@
 "rocket_list_navigation_title" = "Rockets";
+"rocket_list_cell_description" = "First flight: %@";

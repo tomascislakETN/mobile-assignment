@@ -1,19 +1,22 @@
 import ComposableArchitecture
+import SpaceSDK
 
 public extension RocketListFeature {
   @Reducer
   struct RocketListCellFeature {
-
 
     // MARK: - State
 
     @ObservableState
     public struct State: Equatable, Identifiable {
       public let id: String
-
-      init() {
+      var rocket: Rocket
+      
+      init(rocket: Rocket) {
         @Dependency(\.uuid) var uuid
         self.id = uuid().uuidString
+
+        self.rocket = rocket
       }
     }
 
@@ -30,7 +33,7 @@ public extension RocketListFeature {
 
     public var body: some ReducerOf<Self> {
       Reduce { state, action in
-        return .none
+          .none
       }
     }
   }

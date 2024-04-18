@@ -11,22 +11,25 @@ extension RocketListFeature.State {
 
 extension RocketListFeature {
   @ViewAction(for: RocketListFeature.self)
-  struct MainView: View {
+  public struct MainView: View {
 
     // MARK: - Properties
 
-    @Bindable var store: StoreOf<RocketListFeature>
+    @Bindable public var store: StoreOf<RocketListFeature>
 
     // MARK: - Body
 
     public var body: some View {
       NavigationView {
-        Form {
+        List {
           ForEach(store.scope(state: \.cells, action: \.cells)) {
             RocketListFeature.RocketListCellFeature.MainView(store: $0)
           }
         }
         .navigationTitle(Localizable.Rocket.List.Navigation.title)
+      }
+      .onAppear {
+        send(.onAppear)
       }
     }
   }
@@ -44,3 +47,12 @@ extension RocketListFeature {
   )
 }
 #endif
+
+extension RocketListFeature {
+  public static let rootMainView = RocketListFeature.MainView(
+    store: .init(
+      initialState: .init(),
+      reducer: RocketListFeature.init
+    )
+  )
+}

@@ -19,3 +19,5 @@ xcassets:
   outputs:
     templatePath: ./.Colors.stencil
     output: ./SpaceX/Infrastructure/Sources/UIToolkit/Resources/Generated/Colors+Generated.swift
+    params:
+      publicAccess: true

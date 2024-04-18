@@ -10,7 +10,6 @@
 		76EA80AA2BD114BB007CF2AF /* RocketList in Frameworks */ = {isa = PBXBuildFile; productRef = 76EA80A92BD114BB007CF2AF /* RocketList */; };
 		76F394202BD132260082A326 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76F394152BD132260082A326 /* Preview Assets.xcassets */; };
 		76F394212BD132260082A326 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76F394172BD132260082A326 /* Assets.xcassets */; };
-		76F394222BD132260082A326 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F394182BD132260082A326 /* ContentView.swift */; };
 		76F394232BD132260082A326 /* SpaceXApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F3941A2BD132260082A326 /* SpaceXApp.swift */; };
 		76F394242BD132260082A326 /* Domain in Resources */ = {isa = PBXBuildFile; fileRef = 76F3941C2BD132260082A326 /* Domain */; };
 		76F394252BD132260082A326 /* Infrastructure in Resources */ = {isa = PBXBuildFile; fileRef = 76F3941D2BD132260082A326 /* Infrastructure */; };
@@ -21,7 +20,6 @@
 		7611ECCC2BD05649001720E1 /* SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76F394152BD132260082A326 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		76F394172BD132260082A326 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		76F394182BD132260082A326 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		76F394192BD132260082A326 /* SpaceX.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = SpaceX.entitlements; sourceTree = "<group>"; };
 		76F3941A2BD132260082A326 /* SpaceXApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceXApp.swift; sourceTree = "<group>"; };
 		76F3941C2BD132260082A326 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Domain; sourceTree = "<group>"; };
@@ -78,7 +76,6 @@
 			children = (
 				76F394162BD132260082A326 /* Preview Content */,
 				76F394172BD132260082A326 /* Assets.xcassets */,
-				76F394182BD132260082A326 /* ContentView.swift */,
 				76F394192BD132260082A326 /* SpaceX.entitlements */,
 				76F3941A2BD132260082A326 /* SpaceXApp.swift */,
 			);
@@ -215,7 +212,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76F394222BD132260082A326 /* ContentView.swift in Sources */,
 				76F394232BD132260082A326 /* SpaceXApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

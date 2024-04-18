@@ -12,6 +12,12 @@ import Foundation
 public enum Localizable {
   public enum Rocket {
     public enum List {
+      public enum Cell {
+        /// First flight: %@
+        public static func description(_ p1: Any) -> String {
+          return Localizable.tr("Localizable", "rocket_list_cell_description", String(describing: p1), fallback: "First flight: %@")
+        }
+      }
       public enum Navigation {
         /// Rockets
         public static let title = Localizable.tr("Localizable", "rocket_list_navigation_title", fallback: "Rockets")

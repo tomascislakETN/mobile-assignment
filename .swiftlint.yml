@@ -1,5 +1,5 @@
 included:
-  - SpaceX/App
+  - SpaceX
 
 analyzer_rules:
   - unused_declaration
@@ -85,6 +85,9 @@ identifier_name:
   excluded:
     - id
     - as
+    - kN
+    - lb
+    - kg
 
 number_separator:
   minimum_length: 5
