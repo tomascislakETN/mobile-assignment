@@ -20,7 +20,14 @@ extension RocketListFeature {
     // MARK: - Body
 
     public var body: some View {
-      Text(Localizable.Test.key)
+      NavigationView {
+        Form {
+          ForEach(store.scope(state: \.cells, action: \.cells)) {
+            RocketListFeature.RocketListCellFeature.MainView(store: $0)
+          }
+        }
+        .navigationTitle(Localizable.Rocket.List.Navigation.title)
+      }
     }
   }
 }

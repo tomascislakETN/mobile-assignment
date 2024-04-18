@@ -7,12 +7,19 @@ public struct RocketListFeature {
 
   @ObservableState
   public struct State: Equatable {
+    var cells: IdentifiedArrayOf<RocketListFeature.RocketListCellFeature.State> = [
+      .init(),
+      .init(),
+      .init(),
+      .init()
+    ]
   }
 
   // MARK: - Action
 
   public enum Action: ViewAction {
     case view(ViewAction)
+    case cells(IdentifiedActionOf<RocketListFeature.RocketListCellFeature>)
 
     public enum ViewAction {
     }
@@ -24,5 +31,6 @@ public struct RocketListFeature {
     Reduce { state, action in
       return .none
     }
+    .forEach(\.cells, action: \.cells, element: RocketListFeature.RocketListCellFeature.init)
   }
 }

@@ -10,9 +10,13 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 public enum Localizable {
-  public enum Test {
-    /// Test key
-    public static let key = Localizable.tr("Localizable", "test_key", fallback: "Test key")
+  public enum Rocket {
+    public enum List {
+      public enum Navigation {
+        /// Rockets
+        public static let title = Localizable.tr("Localizable", "rocket_list_navigation_title", fallback: "Rockets")
+      }
+    }
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
