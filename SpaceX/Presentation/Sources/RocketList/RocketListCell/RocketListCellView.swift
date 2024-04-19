@@ -42,6 +42,14 @@ extension RocketListFeature.RocketListCellFeature {
             .font(.subheadline)
             .foregroundColor(.Text.secondary)
         }
+
+        Spacer()
+
+        Image(systemName: "chevron.right")
+          .foregroundColor(.gray)
+      }
+      .onTapGesture {
+        send(.tapped)
       }
     }
   }

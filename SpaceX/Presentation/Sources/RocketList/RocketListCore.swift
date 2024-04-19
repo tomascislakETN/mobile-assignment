@@ -1,4 +1,5 @@
 import ComposableArchitecture
+import RocketDetail
 import SpaceSDK
 
 @Reducer
@@ -10,6 +11,7 @@ public struct RocketListFeature {
   @ObservableState
   public struct State: Equatable {
     var cells: IdentifiedArrayOf<RocketListFeature.RocketListCellFeature.State> = []
+    @Presents var destination: Destination.State?
   }
 
   // MARK: - Action
@@ -18,6 +20,7 @@ public struct RocketListFeature {
     case receivedRockets([Rocket])
     case view(ViewAction)
     case cells(IdentifiedActionOf<RocketListFeature.RocketListCellFeature>)
+    case destination(PresentationAction<Destination.Action>)
 
     public enum ViewAction {
       case onAppear
@@ -44,10 +47,23 @@ public struct RocketListFeature {
           }
         }
 
-      case .cells:
+      case .cells(.element(_, .delegate(.tapped))):
+        state.destination = .rocketDetail(.init())
+
+        return .none
+
+      case .cells, .destination:
         return .none
       }
     }
     .forEach(\.cells, action: \.cells, element: RocketListFeature.RocketListCellFeature.init)
+    .ifLet(\.$destination, action: \.destination)
+  }
+
+  // MARK: - Navigation
+
+  @Reducer(state: .equatable)
+  public enum Destination {
+    case rocketDetail(RocketDetailFeature)
   }
 }

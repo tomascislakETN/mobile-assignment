@@ -1,11 +1,7 @@
 import ComposableArchitecture
+import RocketDetail
 import SwiftUI
 import UIToolkit
-
-// MARK: - ViewState
-
-extension RocketListFeature.State {
-}
 
 // MARK: - View
 
@@ -20,12 +16,17 @@ extension RocketListFeature {
     // MARK: - Body
 
     public var body: some View {
-      NavigationView {
+      NavigationStack {
         List {
-          ForEach(store.scope(state: \.cells, action: \.cells)) {
-            RocketListFeature.RocketListCellFeature.MainView(store: $0)
-          }
+          ForEach(
+            store.scope(state: \.cells, action: \.cells),
+            content: RocketListFeature.RocketListCellFeature.MainView.init
+          )
         }
+        .navigationDestination(
+          item: $store.scope(state: \.destination?.rocketDetail, action: \.destination.rocketDetail),
+          destination: RocketDetailFeature.MainView.init
+        )
         .navigationTitle(Localizable.Rocket.List.Navigation.title)
       }
       .onAppear {

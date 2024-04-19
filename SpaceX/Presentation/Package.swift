@@ -11,6 +11,10 @@ let package = Package(
     .library(
       name: "RocketList",
       targets: ["RocketList"]
+    ),
+    .library(
+      name: "RocketDetail",
+      targets: ["RocketDetail"]
     )
   ],
   dependencies: [
@@ -23,6 +27,15 @@ let package = Package(
     // Targets can depend on other targets in this package and products from dependencies.
     .target(
       name: "RocketList",
+      dependencies: [
+        "RocketDetail",
+        .product(name: "UIToolkit", package: "Infrastructure"),
+        .product(name: "SpaceSDK", package: "Domain"),
+        .product(name: "ComposableArchitecture", package: "swift-composable-architecture")
+      ]
+    ),
+    .target(
+      name: "RocketDetail",
       dependencies: [
         .product(name: "UIToolkit", package: "Infrastructure"),
         .product(name: "SpaceSDK", package: "Domain"),
