@@ -80,7 +80,7 @@ extension RocketDetailFeature {
                   Rectangle()
                     .fill(Color.brand)
                     .aspectRatio(contentMode: .fit)
-                    .cornerRadius(8)
+                    .cornerRadius(16)
 
                   VStack(spacing: .xSmall) {
                     Text(parameter.value)
@@ -96,25 +96,14 @@ extension RocketDetailFeature {
               }
             }
           }
+
+          VStack(spacing: .xSmall) {
+            ForEach(store.scope(state: \.stageFeatures, action: \.stageFeatures), content: RocketDetailFeature.StageFeature.MainView.init)
+          }
         }
         .padding(.horizontal, .xSmall)
       }
       .navigationTitle(store.navigationTitle)
-    }
-
-    private struct Section<Content: View>: View {
-      let title: String
-      let content: () -> Content
-
-      var body: some View {
-        VStack(alignment: .leading, spacing: .xxSmall) {
-          Text(title)
-            .font(.title3.weight(.bold))
-            .foregroundColor(.Text.primary)
-
-          content()
-        }
-      }
     }
   }
 }

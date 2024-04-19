@@ -11,9 +11,14 @@ public struct RocketDetailFeature {
   @ObservableState
   public struct State: Equatable {
     var rocket: Rocket
+    var stageFeatures: IdentifiedArrayOf<RocketDetailFeature.StageFeature.State>
 
     public init(rocket: Rocket) {
       self.rocket = rocket
+
+      stageFeatures = IdentifiedArrayOf(
+        uniqueElements: rocket.stages.map(StageFeature.State.init)
+      )
     }
   }
 
@@ -21,6 +26,7 @@ public struct RocketDetailFeature {
 
   public enum Action: ViewAction {
     case view(ViewAction)
+    case stageFeatures(IdentifiedActionOf<RocketDetailFeature.StageFeature>)
 
     public enum ViewAction {
     }
@@ -32,5 +38,6 @@ public struct RocketDetailFeature {
     Reduce { state, action in
       return .none
     }
+    .forEach(\.stageFeatures, action: \.stageFeatures, element: StageFeature.init)
   }
 }
