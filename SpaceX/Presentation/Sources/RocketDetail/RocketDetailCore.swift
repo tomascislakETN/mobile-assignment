@@ -1,4 +1,5 @@
 import ComposableArchitecture
+import SpaceSDK
 
 @Reducer
 public struct RocketDetailFeature {
@@ -9,7 +10,11 @@ public struct RocketDetailFeature {
 
   @ObservableState
   public struct State: Equatable {
-    public init() {}
+    var rocket: Rocket
+
+    public init(rocket: Rocket) {
+      self.rocket = rocket
+    }
   }
 
   // MARK: - Action

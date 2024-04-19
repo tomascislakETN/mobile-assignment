@@ -47,8 +47,14 @@ public struct RocketListFeature {
           }
         }
 
-      case .cells(.element(_, .delegate(.tapped))):
-        state.destination = .rocketDetail(.init())
+      case let .cells(.element(id, .delegate(.tapped))):
+        guard
+          let rocket = state.cells[id: id]?.rocket
+        else {
+          return .none
+        }
+
+        state.destination = .rocketDetail(.init(rocket: rocket))
 
         return .none
 

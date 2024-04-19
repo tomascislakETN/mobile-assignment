@@ -35,7 +35,7 @@ extension RocketListFeature.RocketListCellFeature {
 
         VStack(alignment: .leading, spacing: .xxSmall) {
           Text(store.title)
-            .font(.title3)
+            .font(.title3.weight(.bold))
             .foregroundColor(.Text.primary)
 
           Text(store.description)
