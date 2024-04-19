@@ -1,2 +1,16 @@
 "rocket_list_navigation_title" = "Rockets";
 "rocket_list_cell_description" = "First flight: %@";
+
+"rocket_detail_parameter_height_title" = "height";
+"rocket_detail_parameter_diameter_title" = "diameter";
+"rocket_detail_parameter_mass_title" = "mass";
+
+"rocket_detail_section_overview_title" = "Overview";
+"rocket_detail_section_parameters_title" = "Parameters";
+"rocket_detail_section_first_stage_title" = "First Stage";
+"rocket_detail_section_second_stage_title" = "Second Stage";
+
+"rocket_detail_stage_reusable" = "reusable";
+"rocket_detail_stage_not_reusable" = "not reusable";
+"rocket_detail_stage_fuel" = "%@ of fuel";
+"rocket_detail_stage_burn" = "%@ burn time";

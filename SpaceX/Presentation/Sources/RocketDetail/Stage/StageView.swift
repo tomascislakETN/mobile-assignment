@@ -3,32 +3,6 @@ import SpaceSDK
 import SwiftUI
 import UIToolkit
 
-// MARK: - ViewState
-
-extension RocketDetailFeature.StageFeature.State {
-  var title: String {
-    switch stage.type {
-    case .first:
-      "First Stage"
-    case .second:
-      "Second Stage"
-    }
-  }
-
-  var items: [(icon: Image, title: String)] {
-    [
-      (.reusable, stage.isReusable ? "reusable" : "not reusable"),
-      (.engine, "\(stage.numberOfEngines) engines"),
-      (.fuel, "\(Measurement(value: stage.fuelAmountInTons, unit: UnitMass.shortTons).formatted(.measurement(width: .wide))) of fuel"),
-      stage.burnTimeInSec
-        .map {
-          (Image.burn, "\(Measurement(value: Double($0), unit: UnitDuration.seconds).formatted(.measurement(width: .wide))) burn time")
-        }
-    ]
-      .compactMap { $0 }
-  }
-}
-
 // MARK: - View
 
 extension RocketDetailFeature.StageFeature {
@@ -80,16 +54,5 @@ struct Card<Content: View>: View {
       reducer: RocketDetailFeature.StageFeature.init
     )
   )
-}
-
-#Preview {
-  NavigationStack {
-    RocketDetailFeature.MainView(
-      store: .init(
-        initialState: .init(rocket: .mock),
-        reducer: RocketDetailFeature.init
-      )
-    )
-  }
 }
 #endif

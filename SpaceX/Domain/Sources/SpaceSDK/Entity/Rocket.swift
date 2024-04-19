@@ -42,7 +42,7 @@ public extension Rocket {
       .init(
         type: .first,
         isReusable: true,
-        numberOfEngines: 9,
+        numberOfEngines: 1,
         fuelAmountInTons: 385,
         burnTimeInSec: 162
       ),

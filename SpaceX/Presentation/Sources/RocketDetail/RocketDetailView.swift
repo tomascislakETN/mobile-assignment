@@ -18,7 +18,7 @@ extension RocketDetailFeature.State {
       rocket.heightInMeters
         .map {
           Parameter(
-            title: "height",
+            title: Localizable.Rocket.Detail.Parameter.Height.title,
             value: Measurement(value: $0, unit: UnitLength.meters)
               .formatted(.measurement(width: .narrow, usage: .asProvided))
           )
@@ -26,13 +26,13 @@ extension RocketDetailFeature.State {
       rocket.diameterInMeters
         .map {
           Parameter(
-            title: "diameter",
+            title: Localizable.Rocket.Detail.Parameter.Diameter.title,
             value: Measurement(value: $0, unit: UnitLength.meters)
               .formatted(.measurement(width: .narrow, usage: .asProvided))
           )
         },
           Parameter(
-            title: "mass",
+            title: Localizable.Rocket.Detail.Parameter.Mass.title,
             value: Measurement(value: Double(rocket.massInKilograms), unit: UnitMass.kilograms)
               .formatted()
           )
@@ -67,13 +67,13 @@ extension RocketDetailFeature {
     public var body: some View {
       ScrollView {
         VStack(alignment: .leading, spacing: .xSmall) {
-          Section(title: "Overview") {
+          Section(title: Localizable.Rocket.Detail.Section.Overview.title) {
             Text(store.description)
               .font(.body)
               .foregroundColor(.Text.primary)
           }
 
-          Section(title: "Parameters") {
+          Section(title: Localizable.Rocket.Detail.Section.Parameters.title) {
             HStack(spacing: .xSmall) {
               ForEach(store.parameters, id: \.self) { parameter in
                 ZStack {
