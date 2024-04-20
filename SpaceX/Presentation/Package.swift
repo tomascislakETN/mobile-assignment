@@ -34,6 +34,13 @@ let package = Package(
         .product(name: "ComposableArchitecture", package: "swift-composable-architecture")
       ]
     ),
+    .testTarget(
+      name: "RocketListTests",
+      dependencies: [
+        "RocketList",
+        .product(name: "ComposableArchitecture", package: "swift-composable-architecture")
+      ]
+    ),
     .target(
       name: "RocketDetail",
       dependencies: [
@@ -41,10 +48,6 @@ let package = Package(
         .product(name: "SpaceSDK", package: "Domain"),
         .product(name: "ComposableArchitecture", package: "swift-composable-architecture")
       ]
-    ),
-    .testTarget(
-      name: "RocketListTests",
-      dependencies: ["RocketList"]
     )
   ]
 )

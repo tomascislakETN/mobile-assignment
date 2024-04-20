@@ -18,6 +18,8 @@
 
 /* Begin PBXFileReference section */
 		7611ECCC2BD05649001720E1 /* SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		76CD09BF2BD43D930079C186 /* SpaceX.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = SpaceX.xctestplan; sourceTree = "<group>"; };
+		76DB35462BD440ED00D845F1 /* RocketList.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = RocketList.xctestplan; path = SpaceX/Presentation/RocketList.xctestplan; sourceTree = "<group>"; };
 		76F394152BD132260082A326 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		76F394172BD132260082A326 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76F394192BD132260082A326 /* SpaceX.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = SpaceX.entitlements; sourceTree = "<group>"; };
@@ -42,6 +44,8 @@
 		7611ECC32BD05649001720E1 = {
 			isa = PBXGroup;
 			children = (
+				76DB35462BD440ED00D845F1 /* RocketList.xctestplan */,
+				76CD09BF2BD43D930079C186 /* SpaceX.xctestplan */,
 				76F3941F2BD132260082A326 /* SpaceX */,
 				7611ECCD2BD05649001720E1 /* Products */,
 				761B92082BD059C10020A8E6 /* Frameworks */,
