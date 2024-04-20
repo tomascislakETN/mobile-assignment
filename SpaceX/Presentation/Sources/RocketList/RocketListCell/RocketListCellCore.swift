@@ -30,6 +30,7 @@ public extension RocketListFeature {
         case tapped
       }
 
+      @CasePathable
       public enum Delegate {
         case tapped
       }

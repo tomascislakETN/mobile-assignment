@@ -45,7 +45,6 @@
 			isa = PBXGroup;
 			children = (
 				76DB35462BD440ED00D845F1 /* RocketList.xctestplan */,
-				76CD09BF2BD43D930079C186 /* SpaceX.xctestplan */,
 				76F3941F2BD132260082A326 /* SpaceX */,
 				7611ECCD2BD05649001720E1 /* Products */,
 				761B92082BD059C10020A8E6 /* Frameworks */,
@@ -89,6 +88,7 @@
 		76F3941F2BD132260082A326 /* SpaceX */ = {
 			isa = PBXGroup;
 			children = (
+				76CD09BF2BD43D930079C186 /* SpaceX.xctestplan */,
 				76F3941B2BD132260082A326 /* App */,
 				76F3941D2BD132260082A326 /* Infrastructure */,
 				76F3941C2BD132260082A326 /* Domain */,
