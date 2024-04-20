@@ -88,6 +88,9 @@ identifier_name:
     - kN
     - lb
     - kg
+    - x
+    - y
+    - z
 
 number_separator:
   minimum_length: 5

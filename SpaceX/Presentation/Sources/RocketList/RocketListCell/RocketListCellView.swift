@@ -48,6 +48,7 @@ extension RocketListFeature.RocketListCellFeature {
         Image(systemName: "chevron.right")
           .foregroundColor(.gray)
       }
+      .frame(maxWidth: .infinity)
       .onTapGesture {
         send(.tapped)
       }

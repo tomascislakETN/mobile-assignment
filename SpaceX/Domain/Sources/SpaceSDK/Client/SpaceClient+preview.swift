@@ -1,4 +1,7 @@
+import CoreToolkit
+
 #if DEBUG
+// swiftlint:disable line_length
 public extension SpaceClient {
   static var previewValue: Self {
     .init(
@@ -25,6 +28,22 @@ public extension SpaceClient {
             firstFlight: .now
           )
         ]
+      },
+      rocketState: {
+        AsyncThrowingStream { continuation in
+          continuation.yield(.ready)
+
+          Task {
+            do {
+              try await Task.sleep(nanoseconds: 3_000_000_000)
+
+              continuation.yield(.flying)
+              continuation.finish()
+            } catch {
+              continuation.finish(throwing: error)
+            }
+          }
+        }
       }
     )
   }

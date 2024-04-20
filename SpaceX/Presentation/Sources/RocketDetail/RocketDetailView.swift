@@ -121,6 +121,15 @@ extension RocketDetailFeature {
         }
         .padding(.horizontal, .xSmall)
       }
+      .navigationBarItems(
+        trailing: Button("Launch") {
+          send(.launchButtonTapped)
+        }
+      )
+      .navigationDestination(
+        item: $store.scope(state: \.destination?.launch, action: \.destination.launch),
+        destination: LaunchFeature.MainView.init
+      )
       .navigationTitle(store.navigationTitle)
     }
   }

@@ -12,6 +12,7 @@ public struct Rocket: Equatable {
 }
 
 #if DEBUG
+// swiftlint:disable line_length
 public extension Rocket {
   static func mock(
     rocketName: String = "",

@@ -12,7 +12,19 @@ let package = Package(
     .library(
       name: "UIToolkit",
       targets: ["UIToolkit"]
+    ),
+    .library(
+      name: "Motion",
+      targets: ["Motion"]
+    ),
+    .library(
+      name: "CoreToolkit",
+      targets: ["CoreToolkit"]
     )
+  ],
+  dependencies: [
+    .package(url: "https://github.com/pointfreeco/xctest-dynamic-overlay", .upToNextMajor(from: "1.0.0")),
+    .package(url: "https://github.com/pointfreeco/swift-dependencies", from: "1.0.0")
   ],
   targets: [
     // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -22,6 +34,16 @@ let package = Package(
       resources: [
         .process("Resources/Sources")
       ]
+    ),
+    .target(
+      name: "Motion",
+      dependencies: [
+        .product(name: "XCTestDynamicOverlay", package: "xctest-dynamic-overlay"),
+        .product(name: "Dependencies", package: "swift-dependencies")
+      ]
+    ),
+    .target(
+      name: "CoreToolkit"
     ),
     .testTarget(
       name: "UIToolkitTests",
