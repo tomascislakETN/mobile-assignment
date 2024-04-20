@@ -1,4 +1,5 @@
 #if DEBUG
+// swiftlint:disable line_length
 public extension SpaceClient {
   static var previewValue: Self {
     .init(

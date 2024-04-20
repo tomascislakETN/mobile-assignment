@@ -4,7 +4,7 @@ import Dependencies
 // MARK: - MotionClient
 
 public struct MotionClient {
-  var startAccelerometerUpdates: () async -> AsyncThrowingStream<GyroData, Error>
+  public var startAccelerometerUpdates: () async -> AsyncThrowingStream<MotionPoint, Error>
 }
 
 // MARK: - Dependency
@@ -16,10 +16,4 @@ public extension DependencyValues {
     get { self[MotionClient.self] }
     set { self[MotionClient.self] = newValue }
   }
-}
-
-public struct GyroData: Equatable {
-  public let x: Double
-  public let y: Double
-  public let z: Double
 }

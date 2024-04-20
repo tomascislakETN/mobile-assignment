@@ -2,27 +2,30 @@ import CoreMotion
 
 public extension MotionClient {
   static var liveValue: Self {
-    let manager = CMMotionManager()
+    let motionManager = CMMotionManager()
 
     return .init(
       startAccelerometerUpdates: {
         AsyncThrowingStream { continuation in
-          manager.startGyroUpdates(to: .main) { data, error in
+          motionManager.startAccelerometerUpdates(to: .init()) { data, error in
+
             if let data {
               continuation.yield(
                 with: .success(
-                  GyroData(
-                    x: data.rotationRate.x,
-                    y: data.rotationRate.y,
-                    z: data.rotationRate.z
+                  .init(
+                    x: data.acceleration.x,
+                    y: data.acceleration.y,
+                    z: data.acceleration.z
                   )
                 )
               )
             } else if let error {
               continuation.finish(throwing: error)
             }
+          }
 
-            continuation.finish()
+          continuation.onTermination = { @Sendable (termination) in
+            motionManager.stopAccelerometerUpdates()
           }
         }
       }
