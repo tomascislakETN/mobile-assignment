@@ -12,6 +12,10 @@ let package = Package(
     .library(
       name: "UIToolkit",
       targets: ["UIToolkit"]
+    ),
+    .library(
+      name: "Motion",
+      targets: ["Motion"]
     )
   ],
   targets: [
@@ -22,6 +26,9 @@ let package = Package(
       resources: [
         .process("Resources/Sources")
       ]
+    ),
+    .target(
+      name: "Motion"
     ),
     .testTarget(
       name: "UIToolkitTests",
