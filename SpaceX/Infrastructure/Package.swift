@@ -16,6 +16,10 @@ let package = Package(
     .library(
       name: "Motion",
       targets: ["Motion"]
+    ),
+    .library(
+      name: "CoreToolkit",
+      targets: ["CoreToolkit"]
     )
   ],
   dependencies: [
@@ -37,6 +41,9 @@ let package = Package(
         .product(name: "XCTestDynamicOverlay", package: "xctest-dynamic-overlay"),
         .product(name: "Dependencies", package: "swift-dependencies")
       ]
+    ),
+    .target(
+      name: "CoreToolkit"
     ),
     .testTarget(
       name: "UIToolkitTests",

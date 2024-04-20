@@ -14,6 +14,7 @@ let package = Package(
     )
   ],
   dependencies: [
+    .package(path: "../Infrastructure"),
     .package(url: "https://github.com/pointfreeco/xctest-dynamic-overlay", .upToNextMajor(from: "1.0.0")),
     .package(url: "https://github.com/pointfreeco/swift-dependencies", from: "1.0.0")
   ],
@@ -23,6 +24,8 @@ let package = Package(
     .target(
       name: "SpaceSDK",
       dependencies: [
+        .product(name: "Motion", package: "Infrastructure"),
+        .product(name: "CoreToolkit", package: "Infrastructure"),
         .product(name: "XCTestDynamicOverlay", package: "xctest-dynamic-overlay"),
         .product(name: "Dependencies", package: "swift-dependencies")
       ]

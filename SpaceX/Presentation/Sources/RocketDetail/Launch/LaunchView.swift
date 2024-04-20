@@ -5,6 +5,13 @@ import UIToolkit
 // MARK: - ViewState
 
 extension RocketDetailFeature.LaunchFeature.State {
+  var isRocketIdleHidden: Bool {
+    rocketState == .flying
+  }
+
+  var isRocketFlyingHidden: Bool {
+    rocketState == .ready
+  }
 }
 
 // MARK: - View
@@ -21,22 +28,21 @@ extension RocketDetailFeature.LaunchFeature {
 
     public var body: some View {
       VStack {
-        Image.rocket
+        Spacer()
 
-        Text("x: \((store.motionPoint?.x).corrected)")
-        Text("y: \((store.motionPoint?.y).corrected)")
-        Text("z: \((store.motionPoint?.z).corrected)")
-      }
-        .onAppear {
-          send(.onAppear)
+        ZStack {
+          Image.rocketIdle
+            .isHidden(store.isRocketIdleHidden)
+
+          Image.rocketFlying
+            .offset(y: store.offset)
+            .isHidden(store.isRocketFlyingHidden)
         }
+      }
+      .onAppear {
+        send(.onAppear)
+      }
     }
-  }
-}
-
-extension Double? {
-  var corrected: String {
-    (self ?? 0).formatted(.number.precision(.fractionLength(1)))
   }
 }
 

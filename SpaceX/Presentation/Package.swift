@@ -37,7 +37,6 @@ let package = Package(
     .target(
       name: "RocketDetail",
       dependencies: [
-        .product(name: "Motion", package: "Infrastructure"),
         .product(name: "UIToolkit", package: "Infrastructure"),
         .product(name: "SpaceSDK", package: "Domain"),
         .product(name: "ComposableArchitecture", package: "swift-composable-architecture")
