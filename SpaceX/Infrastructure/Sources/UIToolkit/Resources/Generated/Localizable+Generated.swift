@@ -11,6 +11,68 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 public enum Localizable {
   public enum Rocket {
+    public enum Detail {
+      public enum Parameter {
+        public enum Diameter {
+          /// diameter
+          public static let title = Localizable.tr("Localizable", "rocket_detail_parameter_diameter_title", fallback: "diameter")
+        }
+        public enum Height {
+          /// height
+          public static let title = Localizable.tr("Localizable", "rocket_detail_parameter_height_title", fallback: "height")
+        }
+        public enum Mass {
+          /// mass
+          public static let title = Localizable.tr("Localizable", "rocket_detail_parameter_mass_title", fallback: "mass")
+        }
+      }
+      public enum Section {
+        public enum First {
+          public enum Stage {
+            /// First Stage
+            public static let title = Localizable.tr("Localizable", "rocket_detail_section_first_stage_title", fallback: "First Stage")
+          }
+        }
+        public enum Overview {
+          /// Overview
+          public static let title = Localizable.tr("Localizable", "rocket_detail_section_overview_title", fallback: "Overview")
+        }
+        public enum Parameters {
+          /// Parameters
+          public static let title = Localizable.tr("Localizable", "rocket_detail_section_parameters_title", fallback: "Parameters")
+        }
+        public enum Photos {
+          /// Photos
+          public static let title = Localizable.tr("Localizable", "rocket_detail_section_photos_title", fallback: "Photos")
+        }
+        public enum Second {
+          public enum Stage {
+            /// Second Stage
+            public static let title = Localizable.tr("Localizable", "rocket_detail_section_second_stage_title", fallback: "Second Stage")
+          }
+        }
+      }
+      public enum Stage {
+        /// %@ burn time
+        public static func burn(_ p1: Any) -> String {
+          return Localizable.tr("Localizable", "rocket_detail_stage_burn", String(describing: p1), fallback: "%@ burn time")
+        }
+        /// Plural format key: "%#@localized_format_key@"
+        public static func engine(_ p1: Int) -> String {
+          return Localizable.tr("Localizable", "rocket_detail_stage_engine", p1, fallback: "Plural format key: \"%#@localized_format_key@\"")
+        }
+        /// %@ of fuel
+        public static func fuel(_ p1: Any) -> String {
+          return Localizable.tr("Localizable", "rocket_detail_stage_fuel", String(describing: p1), fallback: "%@ of fuel")
+        }
+        /// reusable
+        public static let reusable = Localizable.tr("Localizable", "rocket_detail_stage_reusable", fallback: "reusable")
+        public enum Not {
+          /// not reusable
+          public static let reusable = Localizable.tr("Localizable", "rocket_detail_stage_not_reusable", fallback: "not reusable")
+        }
+      }
+    }
     public enum List {
       public enum Cell {
         /// First flight: %@

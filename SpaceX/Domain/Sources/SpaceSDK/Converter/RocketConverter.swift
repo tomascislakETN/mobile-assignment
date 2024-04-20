@@ -4,7 +4,13 @@ enum RocketConverter {
       .map {
         .init(
           rocketName: $0.rocketName,
-          firstFlight: $0.firstFlight
+          description: $0.description,
+          heightInMeters: $0.height.meters,
+          diameterInMeters: $0.diameter.meters,
+          massInKilograms: $0.mass.kg,
+          firstFlight: $0.firstFlight,
+          stages: StagesConverter.convertToDomainModel(from: $0),
+          photos: $0.flickrImages
         )
       }
   }

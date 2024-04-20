@@ -9,6 +9,7 @@ public extension Color {
   enum Text {
     public static let primary = Color("Text/Primary", bundle: .module)
     public static let secondary = Color("Text/Secondary", bundle: .module)
+    public static let tertiary = Color("Text/Tertiary", bundle: .module)
   }
 }
 // swiftlint:enable all
