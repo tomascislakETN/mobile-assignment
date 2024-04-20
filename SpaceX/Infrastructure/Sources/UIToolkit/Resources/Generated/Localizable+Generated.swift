@@ -41,6 +41,10 @@ public enum Localizable {
           /// Parameters
           public static let title = Localizable.tr("Localizable", "rocket_detail_section_parameters_title", fallback: "Parameters")
         }
+        public enum Photos {
+          /// Photos
+          public static let title = Localizable.tr("Localizable", "rocket_detail_section_photos_title", fallback: "Photos")
+        }
         public enum Second {
           public enum Stage {
             /// Second Stage

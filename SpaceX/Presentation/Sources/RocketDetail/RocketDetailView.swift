@@ -44,6 +44,10 @@ extension RocketDetailFeature.State {
     let title: String
     let value: String
   }
+
+  var photos: [URL] {
+    rocket.photos.compactMap(URL.init(string:))
+  }
 }
 
 // MARK: - View
@@ -99,6 +103,20 @@ extension RocketDetailFeature {
 
           VStack(spacing: .xSmall) {
             ForEach(store.scope(state: \.stageFeatures, action: \.stageFeatures), content: RocketDetailFeature.StageFeature.MainView.init)
+          }
+
+          Section(title: Localizable.Rocket.Detail.Section.Photos.title) {
+            ForEach(store.photos, id: \.self) { url in
+              AsyncImage(
+                url: url,
+                content: { $0
+                  .resizable()
+                  .scaledToFit()
+                  .cornerRadius(16)
+                },
+                placeholder: { EmptyView() }
+              )
+            }
           }
         }
         .padding(.horizontal, .xSmall)

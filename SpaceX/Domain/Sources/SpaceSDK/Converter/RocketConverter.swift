@@ -9,7 +9,8 @@ enum RocketConverter {
           diameterInMeters: $0.diameter.meters,
           massInKilograms: $0.mass.kg,
           firstFlight: $0.firstFlight,
-          stages: StagesConverter.convertToDomainModel(from: $0)
+          stages: StagesConverter.convertToDomainModel(from: $0),
+          photos: $0.flickrImages
         )
       }
   }

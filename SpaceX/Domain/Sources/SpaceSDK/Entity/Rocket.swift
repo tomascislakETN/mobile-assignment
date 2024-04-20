@@ -8,6 +8,7 @@ public struct Rocket: Equatable {
   public let massInKilograms: Int
   public let firstFlight: Date
   public let stages: [Stage]
+  public let photos: [String]
 }
 
 #if DEBUG
@@ -19,7 +20,8 @@ public extension Rocket {
     diameterInMeters: Double? = 0,
     massInKilograms: Int = 0,
     firstFlight: Date = .now,
-    stages: [Stage] = []
+    stages: [Stage] = [],
+    photos: [String] = []
   ) -> Self {
     .init(
       rocketName: rocketName,
@@ -28,7 +30,8 @@ public extension Rocket {
       diameterInMeters: diameterInMeters,
       massInKilograms: massInKilograms,
       firstFlight: firstFlight,
-      stages: stages
+      stages: stages,
+      photos: photos
     )
   }
 
@@ -53,7 +56,8 @@ public extension Rocket {
         fuelAmountInTons: 385,
         burnTimeInSec: 162
       )
-    ]
+    ],
+    photos: ["https://farm5.staticflickr.com/4599/38583829295_581f34dd84_b.jpg"]
   )
 }
 #endif

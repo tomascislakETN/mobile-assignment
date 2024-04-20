@@ -9,6 +9,7 @@
 "rocket_detail_section_parameters_title" = "Parameters";
 "rocket_detail_section_first_stage_title" = "First Stage";
 "rocket_detail_section_second_stage_title" = "Second Stage";
+"rocket_detail_section_photos_title" = "Photos";
 
 "rocket_detail_stage_reusable" = "reusable";
 "rocket_detail_stage_not_reusable" = "not reusable";
