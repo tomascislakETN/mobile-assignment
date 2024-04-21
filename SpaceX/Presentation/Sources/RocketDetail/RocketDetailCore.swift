@@ -1,5 +1,5 @@
 import ComposableArchitecture
-import SpaceSDK
+import RocketSDK
 
 @Reducer
 public struct RocketDetailFeature {

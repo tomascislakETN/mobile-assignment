@@ -1,5 +1,5 @@
 import ComposableArchitecture
-import SpaceSDK
+import RocketSDK
 
 public extension RocketDetailFeature {
   @Reducer
@@ -17,7 +17,6 @@ public extension RocketDetailFeature {
 
         self.id = uuid().uuidString
         self.stage = stage
-
       }
     }
 

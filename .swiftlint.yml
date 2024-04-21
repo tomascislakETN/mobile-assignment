@@ -1,5 +1,12 @@
 included:
-  - SpaceX
+  - SpaceX/Infrastructure/Sources
+  - SpaceX/Domain/Sources
+  - SpaceX/Presentation/Sources
+
+excluded:
+  - SpaceX/Infrastructure/Tests
+  - SpaceX/Domain/Tests
+  - SpaceX/Presentation/Tests
 
 analyzer_rules:
   - unused_declaration

@@ -1,5 +1,5 @@
 import ComposableArchitecture
-import SpaceSDK
+import RocketSDK
 
 public extension RocketListFeature {
   @Reducer
@@ -30,6 +30,7 @@ public extension RocketListFeature {
         case tapped
       }
 
+      @CasePathable
       public enum Delegate {
         case tapped
       }
