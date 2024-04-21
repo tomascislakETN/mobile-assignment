@@ -2,6 +2,7 @@ import ComposableArchitecture
 import RocketDetail
 import SwiftUI
 import UIToolkit
+import SpaceSDK
 
 // MARK: - View
 
@@ -23,6 +24,7 @@ extension RocketListFeature {
             content: RocketListFeature.RocketListCellFeature.MainView.init
           )
         }
+        .redacted(data: store.cells.elements)
         .navigationDestination(
           item: $store.scope(state: \.destination?.rocketDetail, action: \.destination.rocketDetail),
           destination: RocketDetailFeature.MainView.init

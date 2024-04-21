@@ -30,24 +30,11 @@ extension RocketListFeature.RocketListCellFeature {
     // MARK: - Body
 
     public var body: some View {
-      HStack(spacing: .xSmall) {
-        Image.rocket
-
-        VStack(alignment: .leading, spacing: .xxSmall) {
-          Text(store.title)
-            .font(.title3.weight(.bold))
-            .foregroundColor(.Text.primary)
-
-          Text(store.description)
-            .font(.subheadline)
-            .foregroundColor(.Text.secondary)
-        }
-
-        Spacer()
-
-        Image(systemName: "chevron.right")
-          .foregroundColor(.gray)
-      }
+      ListCell(
+        image: .rocket,
+        title: store.title,
+        description: store.description
+      )
       .frame(maxWidth: .infinity)
       .onTapGesture {
         send(.tapped)
