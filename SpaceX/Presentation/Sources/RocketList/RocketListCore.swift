@@ -1,4 +1,5 @@
 import ComposableArchitecture
+import CoreToolkit
 import RocketDetail
 import SpaceSDK
 
@@ -17,7 +18,7 @@ public struct RocketListFeature {
   // MARK: - Action
 
   public enum Action: ViewAction {
-    case receivedRockets([Rocket])
+    case receivedRockets(Result<[Rocket], DomainError>)
     case view(ViewAction)
     case cells(IdentifiedActionOf<RocketListFeature.RocketListCellFeature>)
     case destination(PresentationAction<Destination.Action>)
@@ -32,7 +33,7 @@ public struct RocketListFeature {
   public var body: some ReducerOf<Self> {
     Reduce { state, action in
       switch action {
-      case let .receivedRockets(rockets):
+      case let .receivedRockets(.success(rockets)):
         state.cells = IdentifiedArrayOf(
           uniqueElements: rockets.map(RocketListFeature.RocketListCellFeature.State.init)
         )
@@ -43,7 +44,7 @@ public struct RocketListFeature {
         switch viewAction {
         case .onAppear:
           return .run { send in
-            await send(.receivedRockets(try await spaceClient.fetchAllRockets()))
+            await send(.receivedRockets(.init { try await spaceClient.fetchAllRockets() }))
           }
         }
 
@@ -58,7 +59,7 @@ public struct RocketListFeature {
 
         return .none
 
-      case .cells, .destination:
+      case .cells, .destination, .receivedRockets:
         return .none
       }
     }

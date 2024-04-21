@@ -51,7 +51,7 @@ public extension RocketDetailFeature {
           )
 
         case .updateOffset:
-          state.offset = -1_000
+          state.offset = -1000
 
           return .none
 
