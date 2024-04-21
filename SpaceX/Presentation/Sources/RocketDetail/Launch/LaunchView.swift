@@ -10,7 +10,18 @@ extension RocketDetailFeature.LaunchFeature.State {
   }
 
   var isRocketFlyingHidden: Bool {
-    rocketState == .ready
+    rocketState != .flying
+  }
+
+  var description: String {
+    switch rocketState {
+    case .ready:
+      Localizable.Launch.ready
+    case .flying:
+      Localizable.Launch.flying
+    case .none:
+      Localizable.Launch.No.data
+    }
   }
 }
 
@@ -30,13 +41,19 @@ extension RocketDetailFeature.LaunchFeature {
       VStack {
         Spacer()
 
-        ZStack {
-          Image.rocketIdle
-            .isHidden(store.isRocketIdleHidden)
+        VStack(spacing: .xSmall) {
+          ZStack {
+            Image.rocketIdle
+              .isHidden(store.isRocketIdleHidden)
 
-          Image.rocketFlying
-            .offset(y: store.offset)
-            .isHidden(store.isRocketFlyingHidden)
+            Image.rocketFlying
+              .offset(y: store.offset)
+              .isHidden(store.isRocketFlyingHidden)
+          }
+
+          Text(store.description)
+            .font(.body)
+            .foregroundColor(.Text.primary)
         }
       }
       .onAppear {
