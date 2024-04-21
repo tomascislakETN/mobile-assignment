@@ -12,6 +12,7 @@ public struct RocketListFeature {
   @ObservableState
   public struct State: Equatable {
     var cells: IdentifiedArrayOf<RocketListFeature.RocketListCellFeature.State> = []
+    var receiveRocketsError: DomainError?
     @Presents var destination: Destination.State?
   }
 
@@ -25,6 +26,7 @@ public struct RocketListFeature {
 
     public enum ViewAction {
       case onAppear
+      case errorOKTapped
     }
   }
 
@@ -40,12 +42,22 @@ public struct RocketListFeature {
 
         return .none
 
+      case let .receivedRockets(.failure(error)):
+        state.receiveRocketsError = error
+
+        state.destination = .errorFeature(.init())
+
+        return .none
+
       case let .view(viewAction):
         switch viewAction {
         case .onAppear:
-          return .run { send in
-            await send(.receivedRockets(.init { try await fetchAllRockets() }))
-          }
+          return fetchRockets(&state)
+
+        case .errorOKTapped:
+          state.destination = nil
+
+          return fetchRockets(&state)
         }
 
       case let .cells(.element(id, .delegate(.tapped))):
@@ -59,7 +71,7 @@ public struct RocketListFeature {
 
         return .none
 
-      case .cells, .destination, .receivedRockets:
+      case .cells, .destination:
         return .none
       }
     }
@@ -72,5 +84,19 @@ public struct RocketListFeature {
   @Reducer(state: .equatable)
   public enum Destination {
     case rocketDetail(RocketDetailFeature)
+    case errorFeature(ErrorFeature)
   }
 }
+
+private extension RocketListFeature {
+  func fetchRockets(_ state: inout State) -> Effect<Action> {
+    state.receiveRocketsError = nil
+
+    return .run { send in
+      await send(.receivedRockets(.init { try await fetchAllRockets() }))
+    }
+  }
+}
+
+@Reducer
+public struct ErrorFeature {}

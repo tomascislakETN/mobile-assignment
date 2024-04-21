@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "rocketError.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

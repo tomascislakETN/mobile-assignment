@@ -31,6 +31,16 @@ extension RocketListFeature {
         )
         .navigationTitle(Localizable.Rocket.List.Navigation.title)
       }
+      .fullScreenCover(
+        item: $store.scope(state: \.destination?.errorFeature, action: \.destination.errorFeature),
+        content: { _ in
+          ErrorView(
+            okTapped: {
+              send(.errorOKTapped)
+            }
+          )
+        }
+      )
       .onAppear {
         send(.onAppear)
       }

@@ -12,5 +12,6 @@ public extension Image {
   static let rocketFlying = Image("Rocket Flying", bundle: .module)
   static let rocketIdle = Image("Rocket Idle", bundle: .module)
   static let rocket = Image("Rocket", bundle: .module)
+  static let rocketError = Image("rocketError", bundle: .module)
 }
 // swiftlint:enable all
