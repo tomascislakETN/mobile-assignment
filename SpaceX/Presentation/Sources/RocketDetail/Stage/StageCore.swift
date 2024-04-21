@@ -17,7 +17,6 @@ public extension RocketDetailFeature {
 
         self.id = uuid().uuidString
         self.stage = stage
-
       }
     }
 

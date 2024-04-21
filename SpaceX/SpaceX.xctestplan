@@ -36,6 +36,13 @@
         "identifier" : "RocketListTests",
         "name" : "RocketListTests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:SpaceX\/Presentation",
+        "identifier" : "RocketDetailTests",
+        "name" : "RocketDetailTests"
+      }
     }
   ],
   "version" : 1
