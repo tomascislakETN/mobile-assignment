@@ -62,3 +62,30 @@ public extension Rocket {
   )
 }
 #endif
+
+public extension Rocket {
+  static var placeholder: [Self] {
+    [
+      .mock(
+        rocketName: "Falcon 1",
+        description: "Falcon 9 is a two-stage rocket designed and manufactured by SpaceX for the reliable and safe transport of satellites and the Dragon spacecraft into orbit.",
+        firstFlight: .now
+      ),
+      .mock(
+        rocketName: "Falcon 9",
+        description: "Falcon 9 is a two-stage rocket designed and manufactured by SpaceX for the reliable and safe transport of satellites and the Dragon spacecraft into orbit.",
+        firstFlight: .now
+      ),
+      .mock(
+        rocketName: "Falcon Heavy",
+        description: "Falcon 9 is a two-stage rocket designed and manufactured by SpaceX for the reliable and safe transport of satellites and the Dragon spacecraft into orbit.",
+        firstFlight: .now
+      ),
+      .mock(
+        rocketName: "Starship",
+        description: "Falcon 9 is a two-stage rocket designed and manufactured by SpaceX for the reliable and safe transport of satellites and the Dragon spacecraft into orbit.",
+        firstFlight: .now
+      )
+    ]
+  }
+}
