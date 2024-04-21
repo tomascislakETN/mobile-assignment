@@ -67,7 +67,6 @@ public extension RocketDetailFeature {
           }
         }
       }
-      ._printChanges()
     }
   }
 }

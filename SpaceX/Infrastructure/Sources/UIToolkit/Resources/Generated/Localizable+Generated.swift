@@ -10,6 +10,16 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 public enum Localizable {
+  public enum Launch {
+    /// Launch successfull!
+    public static let flying = Localizable.tr("Localizable", "launch_flying", fallback: "Launch successfull!")
+    /// Move your phone up to launch the rocket
+    public static let ready = Localizable.tr("Localizable", "launch_ready", fallback: "Move your phone up to launch the rocket")
+    public enum No {
+      /// Something went wrong
+      public static let data = Localizable.tr("Localizable", "launch_no_data", fallback: "Something went wrong")
+    }
+  }
   public enum Rocket {
     public enum Detail {
       public enum Parameter {
