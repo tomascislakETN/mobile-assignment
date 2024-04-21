@@ -17,18 +17,3 @@ public extension DependencyValues {
     set { self[RocketClient.self] = newValue }
   }
 }
-
-public enum RocketState: Equatable {
-  case ready
-  case flying
-}
-
-import Motion
-
-enum RocketStateConverter {
-  static func domainModel(from external: MotionPoint) -> RocketState {
-    abs(external.z) < 0.5
-    ? .flying
-    : .ready
-  }
-}

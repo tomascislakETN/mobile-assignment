@@ -36,6 +36,13 @@
         "identifier" : "RocketDetailTests",
         "name" : "RocketDetailTests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:SpaceX\/Domain",
+        "identifier" : "RocketSDKTests",
+        "name" : "RocketSDKTests"
+      }
     }
   ],
   "version" : 1

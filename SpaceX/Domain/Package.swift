@@ -16,7 +16,8 @@ let package = Package(
   dependencies: [
     .package(path: "../Infrastructure"),
     .package(url: "https://github.com/pointfreeco/xctest-dynamic-overlay", .upToNextMajor(from: "1.0.0")),
-    .package(url: "https://github.com/pointfreeco/swift-dependencies", from: "1.0.0")
+    .package(url: "https://github.com/pointfreeco/swift-dependencies", from: "1.0.0"),
+    .package(url: "https://github.com/pointfreeco/swift-custom-dump", .upToNextMajor(from: "1.0.0"))
   ],
   targets: [
     // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -25,6 +26,7 @@ let package = Package(
       name: "RocketSDK",
       dependencies: [
         .product(name: "Motion", package: "Infrastructure"),
+        .product(name: "Networking", package: "Infrastructure"),
         .product(name: "CoreToolkit", package: "Infrastructure"),
         .product(name: "XCTestDynamicOverlay", package: "xctest-dynamic-overlay"),
         .product(name: "Dependencies", package: "swift-dependencies")
@@ -32,7 +34,10 @@ let package = Package(
     ),
     .testTarget(
       name: "RocketSDKTests",
-      dependencies: ["RocketSDK"]
+      dependencies: [
+        "RocketSDK",
+        .product(name: "CustomDump", package: "swift-custom-dump")
+      ]
     )
   ]
 )

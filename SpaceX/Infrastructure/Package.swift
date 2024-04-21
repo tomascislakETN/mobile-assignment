@@ -20,6 +20,10 @@ let package = Package(
     .library(
       name: "CoreToolkit",
       targets: ["CoreToolkit"]
+    ),
+    .library(
+      name: "Networking",
+      targets: ["Networking"]
     )
   ],
   dependencies: [
@@ -46,9 +50,11 @@ let package = Package(
     .target(
       name: "CoreToolkit"
     ),
-    .testTarget(
-      name: "UIToolkitTests",
-      dependencies: ["UIToolkit"]
+    .target(
+      name: "Networking",
+      dependencies: [
+        "CoreToolkit"
+      ]
     )
   ]
 )
