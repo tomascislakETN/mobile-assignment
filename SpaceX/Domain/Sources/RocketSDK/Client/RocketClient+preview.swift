@@ -2,7 +2,7 @@ import CoreToolkit
 
 #if DEBUG
 // swiftlint:disable line_length
-public extension SpaceClient {
+public extension RocketClient {
   static var previewValue: Self {
     .init(
       fetchAllRockets: {

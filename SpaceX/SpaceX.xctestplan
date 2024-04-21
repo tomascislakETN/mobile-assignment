@@ -18,13 +18,6 @@
   "testTargets" : [
     {
       "target" : {
-        "containerPath" : "container:SpaceX\/Domain",
-        "identifier" : "SpaceSDKTests",
-        "name" : "SpaceSDKTests"
-      }
-    },
-    {
-      "target" : {
         "containerPath" : "container:SpaceX\/Infrastructure",
         "identifier" : "UIToolkitTests",
         "name" : "UIToolkitTests"

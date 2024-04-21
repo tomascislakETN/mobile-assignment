@@ -30,7 +30,7 @@ let package = Package(
       dependencies: [
         "RocketDetail",
         .product(name: "UIToolkit", package: "Infrastructure"),
-        .product(name: "SpaceSDK", package: "Domain"),
+        .product(name: "RocketSDK", package: "Domain"),
         .product(name: "ComposableArchitecture", package: "swift-composable-architecture")
       ]
     ),
@@ -38,7 +38,7 @@ let package = Package(
       name: "RocketListTests",
       dependencies: [
         "RocketList",
-        .product(name: "SpaceSDK", package: "Domain"),
+        .product(name: "RocketSDK", package: "Domain"),
         .product(name: "ComposableArchitecture", package: "swift-composable-architecture")
       ]
     ),
@@ -46,7 +46,7 @@ let package = Package(
       name: "RocketDetail",
       dependencies: [
         .product(name: "UIToolkit", package: "Infrastructure"),
-        .product(name: "SpaceSDK", package: "Domain"),
+        .product(name: "RocketSDK", package: "Domain"),
         .product(name: "ComposableArchitecture", package: "swift-composable-architecture")
       ]
     ),
@@ -54,7 +54,7 @@ let package = Package(
       name: "RocketDetailTests",
       dependencies: [
         "RocketDetail",
-        .product(name: "SpaceSDK", package: "Domain"),
+        .product(name: "RocketSDK", package: "Domain"),
         .product(name: "ComposableArchitecture", package: "swift-composable-architecture")
       ]
     )

@@ -1,6 +1,6 @@
 import ComposableArchitecture
 @testable import RocketList
-import SpaceSDK
+import RocketSDK
 import XCTest
 
 final class RocketListTests: XCTestCase {
@@ -12,7 +12,7 @@ final class RocketListTests: XCTestCase {
       initialState: Feature.State(),
       reducer: Feature.init
     ) {
-      $0.spaceClient.fetchAllRockets = { [.mock] }
+      $0.rocketClient.fetchAllRockets = { [.mock] }
       $0.uuid = .constant(.init(0))
     }
 

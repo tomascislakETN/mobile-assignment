@@ -1,20 +1,20 @@
 import Dependencies
 
-// MARK: - SpaceClient
+// MARK: - RocketClient
 
-public struct SpaceClient {
+public struct RocketClient {
   public var fetchAllRockets: @Sendable () async throws -> [Rocket]
   public var rocketState: @Sendable () async -> AsyncThrowingStream<RocketState, Error>
 }
 
 // MARK: - Dependency
 
-extension SpaceClient: DependencyKey {}
+extension RocketClient: DependencyKey {}
 
 public extension DependencyValues {
-  var spaceClient: SpaceClient {
-    get { self[SpaceClient.self] }
-    set { self[SpaceClient.self] = newValue }
+  var rocketClient: RocketClient {
+    get { self[RocketClient.self] }
+    set { self[RocketClient.self] = newValue }
   }
 }
 

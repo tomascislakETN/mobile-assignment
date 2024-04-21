@@ -3,7 +3,7 @@ import Dependencies
 import Foundation
 import Motion
 
-public extension SpaceClient {
+public extension RocketClient {
   static var liveValue: Self {
     @Dependency(\.motionClient) var motionClient
 
@@ -32,7 +32,7 @@ public extension SpaceClient {
 
     return .init(
       fetchAllRockets: {
-        let url = try SpaceAPI.rockets.get()
+        let url = try RocketAPI.rockets.get()
 
         return RocketConverter.convertToDomainModel(
           from: try await performRequest(from: url)

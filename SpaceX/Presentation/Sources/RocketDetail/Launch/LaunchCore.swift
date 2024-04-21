@@ -1,11 +1,11 @@
 import ComposableArchitecture
 import Foundation
-import SpaceSDK
+import RocketSDK
 
 public extension RocketDetailFeature {
   @Reducer
   struct LaunchFeature {
-    @Dependency(\.spaceClient) var spaceClient
+    @Dependency(\.rocketClient.rocketState) var rocketState
 
     // MARK: - State
 
@@ -59,7 +59,7 @@ public extension RocketDetailFeature {
           switch viewAction {
           case .onAppear:
             return .run { send in
-              for try await data in await spaceClient.rocketState() {
+              for try await data in await rocketState() {
                 await send(.receivedRocketState(data))
               }
             }

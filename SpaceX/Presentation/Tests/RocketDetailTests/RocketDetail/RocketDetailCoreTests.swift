@@ -1,6 +1,6 @@
 import ComposableArchitecture
 @testable import RocketDetail
-import SpaceSDK
+import RocketSDK
 import XCTest
 
 final class RocketDetailCoreTests: XCTestCase {

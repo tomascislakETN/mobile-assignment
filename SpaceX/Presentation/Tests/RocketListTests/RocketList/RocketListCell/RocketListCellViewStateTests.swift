@@ -1,6 +1,6 @@
 import ComposableArchitecture
 @testable import RocketList
-import SpaceSDK
+import RocketSDK
 import XCTest
 
 final class RocketListCellViewStateTests: XCTestCase {

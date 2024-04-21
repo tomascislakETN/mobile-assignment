@@ -1,5 +1,5 @@
 import ComposableArchitecture
-import SpaceSDK
+import RocketSDK
 
 public extension RocketListFeature {
   @Reducer

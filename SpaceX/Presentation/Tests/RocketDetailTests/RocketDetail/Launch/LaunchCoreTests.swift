@@ -1,6 +1,6 @@
 import ComposableArchitecture
 @testable import RocketDetail
-import SpaceSDK
+import RocketSDK
 import XCTest
 
 final class LaunchCoreTests: XCTestCase {
@@ -12,7 +12,7 @@ final class LaunchCoreTests: XCTestCase {
       initialState: Feature.State(),
       reducer: Feature.init
     ) {
-      $0.spaceClient.rocketState = {
+      $0.rocketClient.rocketState = {
         .just(.ready)
       }
     }
@@ -30,7 +30,7 @@ final class LaunchCoreTests: XCTestCase {
       initialState: Feature.State(),
       reducer: Feature.init
     ) {
-      $0.spaceClient.rocketState = {
+      $0.rocketClient.rocketState = {
         .just(.flying)
       }
     }
