@@ -1,4 +1,5 @@
 import CoreMotion
+import CoreToolkit
 
 public extension MotionClient {
   static var liveValue: Self {
@@ -6,21 +7,19 @@ public extension MotionClient {
 
     return .init(
       startAccelerometerUpdates: {
-        AsyncThrowingStream { continuation in
+        .init { continuation in
           motionManager.startAccelerometerUpdates(to: .init()) { data, error in
 
             if let data {
               continuation.yield(
-                with: .success(
-                  .init(
-                    x: data.acceleration.x,
-                    y: data.acceleration.y,
-                    z: data.acceleration.z
-                  )
+                .init(
+                  x: data.acceleration.x,
+                  y: data.acceleration.y,
+                  z: data.acceleration.z
                 )
               )
             } else if let error {
-              continuation.finish(throwing: error)
+              continuation.finish(throwing: DomainError.createAndLog(cause: .motionError, underlyingError: error))
             }
           }
 

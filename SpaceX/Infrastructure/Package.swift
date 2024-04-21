@@ -38,6 +38,7 @@ let package = Package(
     .target(
       name: "Motion",
       dependencies: [
+        "CoreToolkit",
         .product(name: "XCTestDynamicOverlay", package: "xctest-dynamic-overlay"),
         .product(name: "Dependencies", package: "swift-dependencies")
       ]
