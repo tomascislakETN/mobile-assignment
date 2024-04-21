@@ -82,7 +82,7 @@ extension RocketDetailFeature {
               ForEach(store.parameters, id: \.self) { parameter in
                 ZStack {
                   Rectangle()
-                    .fill(Color.brand)
+                    .fill(Color.Brand.primary)
                     .aspectRatio(contentMode: .fit)
                     .cornerRadius(16)
 
