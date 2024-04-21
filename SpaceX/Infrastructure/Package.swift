@@ -53,7 +53,8 @@ let package = Package(
     .target(
       name: "Networking",
       dependencies: [
-        "CoreToolkit"
+        "CoreToolkit",
+        .product(name: "Dependencies", package: "swift-dependencies")
       ]
     )
   ]

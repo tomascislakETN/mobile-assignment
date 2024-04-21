@@ -36,6 +36,7 @@ extension RocketListFeature.RocketListCellFeature {
         description: store.description
       )
       .frame(maxWidth: .infinity)
+      .contentShape(Rectangle())
       .onTapGesture {
         send(.tapped)
       }

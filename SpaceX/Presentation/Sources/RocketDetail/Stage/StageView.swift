@@ -24,6 +24,8 @@ extension RocketDetailFeature.StageFeature {
                 item.icon
 
                 Text(item.title)
+                  .font(.body)
+                  .foregroundColor(Color.Text.primary)
               }
             }
           }
