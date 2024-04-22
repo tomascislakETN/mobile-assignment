@@ -15,7 +15,11 @@
 "rocket_detail_stage_not_reusable" = "not reusable";
 "rocket_detail_stage_fuel" = "%@ of fuel";
 "rocket_detail_stage_burn" = "%@ burn time";
+"rocket_detail_navigation_right_title" = "Launch";
 
 "launch_ready" = "Move your phone up to launch the rocket";
 "launch_flying" = "Launch successfull!";
 "launch_no_data" = "Something went wrong";
+
+"error_title" = "Something went wrong";
+"error_button_title" = "OK";

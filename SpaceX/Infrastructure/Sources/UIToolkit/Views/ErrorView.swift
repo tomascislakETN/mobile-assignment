@@ -13,7 +13,7 @@ public struct ErrorView: View {
     VStack(spacing: .xSmall) {
       Spacer()
 
-      Text("Something went wrong")
+      Text(Localizable.Error.title)
         .font(.title.bold())
         .foregroundColor(.Text.primary)
 
@@ -26,7 +26,7 @@ public struct ErrorView: View {
       Button(
         action: okTapped,
         label: {
-          Text("OK")
+          Text(Localizable.Error.Button.title)
             .font(.title3)
             .foregroundColor(.white)
             .frame(height: 50)

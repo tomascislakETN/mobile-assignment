@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "98438A30-6CCC-4224-8D03-92AFA0A10A70",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "RocketSDKTests",
+        "name" : "RocketSDKTests"
+      }
+    }
+  ],
+  "version" : 1
+}

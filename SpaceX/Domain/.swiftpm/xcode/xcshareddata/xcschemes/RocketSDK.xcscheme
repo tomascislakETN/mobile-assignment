@@ -15,9 +15,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "RocketList"
-               BuildableName = "RocketList"
-               BlueprintName = "RocketList"
+               BlueprintIdentifier = "RocketSDK"
+               BuildableName = "RocketSDK"
+               BlueprintName = "RocketSDK"
                ReferencedContainer = "container:">
             </BuildableReference>
          </BuildActionEntry>
@@ -30,7 +30,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:RocketList.xctestplan"
+            reference = "container:RocketSDK.xctestplan"
             default = "YES">
          </TestPlanReference>
       </TestPlans>
@@ -55,9 +55,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "RocketList"
-            BuildableName = "RocketList"
-            BlueprintName = "RocketList"
+            BlueprintIdentifier = "RocketSDK"
+            BuildableName = "RocketSDK"
+            BlueprintName = "RocketSDK"
             ReferencedContainer = "container:">
          </BuildableReference>
       </MacroExpansion>

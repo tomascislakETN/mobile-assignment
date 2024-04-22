@@ -122,7 +122,7 @@ extension RocketDetailFeature {
         .padding(.horizontal, .xSmall)
       }
       .navigationBarItems(
-        trailing: Button("Launch") {
+        trailing: Button(Localizable.Rocket.Detail.Navigation.Right.title) {
           send(.launchButtonTapped)
         }
       )

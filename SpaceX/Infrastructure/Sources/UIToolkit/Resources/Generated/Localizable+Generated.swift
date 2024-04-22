@@ -10,6 +10,14 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 public enum Localizable {
+  public enum Error {
+    /// Something went wrong
+    public static let title = Localizable.tr("Localizable", "error_title", fallback: "Something went wrong")
+    public enum Button {
+      /// OK
+      public static let title = Localizable.tr("Localizable", "error_button_title", fallback: "OK")
+    }
+  }
   public enum Launch {
     /// Launch successfull!
     public static let flying = Localizable.tr("Localizable", "launch_flying", fallback: "Launch successfull!")
@@ -22,6 +30,12 @@ public enum Localizable {
   }
   public enum Rocket {
     public enum Detail {
+      public enum Navigation {
+        public enum Right {
+          /// Launch
+          public static let title = Localizable.tr("Localizable", "rocket_detail_navigation_right_title", fallback: "Launch")
+        }
+      }
       public enum Parameter {
         public enum Diameter {
           /// diameter
