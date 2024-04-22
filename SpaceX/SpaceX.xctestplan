@@ -1,0 +1,42 @@
+{
+  "configurations" : [
+    {
+      "id" : "F29B03FC-A5FD-47C4-BD3D-6BBC9A267354",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:SpaceX.xcodeproj",
+      "identifier" : "7611ECCB2BD05649001720E1",
+      "name" : "SpaceX"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:SpaceX\/Presentation",
+        "identifier" : "RocketListTests",
+        "name" : "RocketListTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:SpaceX\/Presentation",
+        "identifier" : "RocketDetailTests",
+        "name" : "RocketDetailTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:SpaceX\/Domain",
+        "identifier" : "RocketSDKTests",
+        "name" : "RocketSDKTests"
+      }
+    }
+  ],
+  "version" : 1
+}

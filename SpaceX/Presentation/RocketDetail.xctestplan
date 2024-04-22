@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "C623D4D2-09EF-4717-B2F9-BB7605E1F370",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "RocketDetailTests",
+        "name" : "RocketDetailTests"
+      }
+    }
+  ],
+  "version" : 1
+}

@@ -1,0 +1,23 @@
+strings:
+  inputs: ./SpaceX/Infrastructure/Sources/UIToolkit/Resources/Sources/en.lproj
+  options:
+    separator: _
+  outputs:
+    templateName: structured-swift5
+    output: ./SpaceX/Infrastructure/Sources/UIToolkit/Resources/Generated/Localizable+Generated.swift
+    params:
+      enumName: Localizable
+      publicAccess: true
+xcassets:
+- inputs: ./SpaceX/Infrastructure/Sources/UIToolkit/Resources/Sources/Images.xcassets
+  outputs:
+    templatePath: ./.Images.stencil
+    output: ./SpaceX/Infrastructure/Sources/UIToolkit/Resources/Generated/Images+Generated.swift
+    params:
+      publicAccess: true
+- inputs: ./SpaceX/Infrastructure/Sources/UIToolkit/Resources/Sources/Colors.xcassets
+  outputs:
+    templatePath: ./.Colors.stencil
+    output: ./SpaceX/Infrastructure/Sources/UIToolkit/Resources/Generated/Colors+Generated.swift
+    params:
+      publicAccess: true

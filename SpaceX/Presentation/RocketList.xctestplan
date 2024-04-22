@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "0307B844-FCAA-47EA-8958-CA38C8A56D09",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "RocketListTests",
+        "name" : "RocketListTests"
+      }
+    }
+  ],
+  "version" : 1
+}
