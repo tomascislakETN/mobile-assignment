@@ -47,14 +47,17 @@ extension RocketDetailFeature.LaunchFeature {
               .isHidden(store.isRocketIdleHidden)
 
             Image.rocketFlying
-              .offset(y: store.offset)
               .isHidden(store.isRocketFlyingHidden)
           }
+
+          Spacer()
+            .isHidden(store.isSpacerHidden, remove: true)
 
           Text(store.description)
             .font(.body)
             .foregroundColor(.Text.primary)
         }
+        .padding(.bottom, .large)
       }
       .onAppear {
         send(.onAppear)

@@ -25,7 +25,7 @@ final class LaunchCoreTests: XCTestCase {
   }
 
   @MainActor
-  func test_sut_should_update_offset_when_receive_flying_state() async {
+  func test_sut_should_move_rocket_when_receive_flying_state() async {
     let store = TestStore(
       initialState: Feature.State(),
       reducer: Feature.init
@@ -42,7 +42,7 @@ final class LaunchCoreTests: XCTestCase {
     }
 
     await store.receive(\.updateOffset) {
-      $0.offset = -1000
+      $0.isSpacerHidden = false
     }
   }
 }

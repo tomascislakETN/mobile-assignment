@@ -12,7 +12,7 @@ public extension RocketDetailFeature {
     @ObservableState
     public struct State: Equatable {
       var rocketState: RocketState?
-      var offset: CGFloat = 0
+      var isSpacerHidden = true
     }
 
     // MARK: - Action
@@ -51,7 +51,7 @@ public extension RocketDetailFeature {
           )
 
         case .updateOffset:
-          state.offset = -1000
+          state.isSpacerHidden = false
 
           return .none
 
